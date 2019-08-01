@@ -1,3 +1,4 @@
+require 'pry'
 class FiguresController < ApplicationController
   # add controller methods
   
@@ -8,6 +9,7 @@ class FiguresController < ApplicationController
 
   post '/figures' do
     @figure = Figure.create(params[:figure])
+    binding.pry
     redirect "/figures/#{@figure.id}"
   end
 
